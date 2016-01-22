@@ -1,0 +1,234 @@
+body {
+	margin: auto;
+	padding: 41px 78px 0px 93px;
+	width: 1290px;
+}
+#head_block {
+	height: 255px;
+}
+#block1 {
+	height: 255px;
+	width: 205px;
+	display: inline-block;
+}
+.tube {
+	height: 205px;
+	width: 205px;
+	border-radius: 50%;
+	background-image: url(../images/01.jpg);
+}
+.element {
+	font-family: calibri;
+	font-size: 20px;
+	color: #0c4370;
+}
+#block2 {
+	height: 255px;
+	width: 205px;
+	display: inline-block;
+	margin-left: 40px;
+}
+.tube:hover {
+	box-shadow: inset 0px 0px 0px 60px rgba(117,209,255,0.5);
+    transition: box-shadow 0.2s ease;
+}
+#left_block {
+	width: 718px;
+	display: inline-block;
+}
+#left_block_1 {
+	width: 260px;
+	height: 140px;
+	display: inline-block;
+}
+#title1 {
+	font-family: calibri;
+	font-size: 48px;
+	font-weight: bolder;
+	line-height: 36px;
+}
+#title2 {
+	font-family: calibri;
+	font-size: 30px;
+	font-weight: bolder;
+	line-height: 56px;
+}
+#title3 {
+	font-family: calibri;
+	font-size: 18px;
+	font-weight: bolder;
+	line-height: 26px;
+}
+a {
+	text-decoration: none;
+}
+#review{
+	display: inline-block;
+	vertical-align: top;
+	width: 370px;
+	height: 50px;
+	background-image: linear-gradient(to top, #E9980B, #FFF401);
+	border-radius: 10px;
+	font-family: calibri;
+	font-size: 36px;
+	line-height: 24pt;
+	font-weight: bolder;
+	color: #3C2E05;
+	padding-left: 70px;
+	padding-top: 13px;
+	margin-left: 14px;
+	box-shadow: 0px 40px 4px -29px #777;
+}
+#review:hover {
+	background-image: linear-gradient(to top, #F4C11A, #FFF700);
+	transition: all 0.1s ease;
+}
+#review:active {
+	box-shadow: 0px 35px 4px -29px #777;
+	background-image: linear-gradient(to top, #EA990A, #FFE302);
+	transition: all 0.1s ease;
+}
+#right_block {
+	width: 562px;
+	height: 200px;
+	display: inline-block;
+	vertical-align: top;
+}
+ul {
+	list-style-image: url('../images/circle.jpg');
+	font-family: calibri;
+	font-size: 18px;
+	color: #383838;
+}
+ol {
+	font-family: calibri;
+	font-size: 18px;
+	color: #3F84C4;
+}
+.ol_text {
+	color: #383838;
+}
+#left_block_2 {
+	height: 300px;
+	width: 100%;
+}
+table {
+	width: 718px;
+	border-collapse: collapse;
+}
+tr {
+	height: 40px;
+}
+.column_1 {
+	width: 105px;
+	padding-left: 15px;
+}
+.column_2 {
+	width: 200px;
+}
+.column_3 {
+	width: 202px;
+}
+td {
+	font-family: calibri;
+	font-size: 17px;
+}
+.odd_line {
+	background-color: #f5fcfe;
+	border-top:1px #E5F3F7 solid;
+	border-bottom: 1px #E5F3F7 solid;
+	border-left: 1px white solid;
+	border-right: 1px white solid;
+}
+.not_odd_line {
+ 	background-color: white;
+	border-top:1px #E5F3F7 solid;
+	border-bottom: 1px #E5F3F7 solid;
+	border-left: 1px white solid;
+	border-right: 1px white solid;
+}
+ #table_head {
+ 	border:0px;
+ 	background-image: linear-gradient(to top, #247BC0, #00B6F3);
+	border-radius: 10px 10px 0px 0px;
+}
+#head_line {
+	font-weight: bolder;
+	border: 0px;
+}
+#modal {
+    background: #00455E;
+    opacity: 0.0;
+    left: 0;
+    position: absolute;
+    top: -100%;
+    width: 100%;
+	min-width: 1461px;
+    height: 100%;
+    min-height: 800px;
+    box-sizing: border-box;
+}
+#modal:target {
+    top: 0;
+    transition: top 0s ease-in-out;
+    opacity: 1.0;
+    transition: opacity 1.5s ease;
+}
+#modal #close {
+	background-color: #EB5650;
+	height: 32px;
+	width: 32px;
+	border-radius: 50%;
+	border:4px #00455E solid;
+    float: right;
+	position: relative;
+	bottom: 19px;
+	left: 19px;
+}
+#close img {
+	position: relative;
+	top: 7px;
+	left: 9px;
+}
+#section {
+	height: 440px;
+	width: 380px;
+	background-color: white;
+	border-radius: 14px 14px 14px 14px;
+	margin-top: 10%;
+	margin-right: auto;
+	margin-left: auto;
+}
+#send_msg {
+	font-family: calibri;
+	font-size: 40px;
+	font-weight: bold;
+	line-height: 34px;
+	position: relative;
+	top: 18px;
+	left: 20px;
+
+}
+#data {
+	width: 260px;
+	position: relative;
+	top: 25px;
+}
+#data input, textarea {
+	border-radius: 8px;
+	border: 1px #CECECE solid;
+	box-shadow: 0px -2px 1px 2px #F5F5F5;
+	font-family: calibri;
+	font-size: 20px;
+	font-weight: bold;
+	padding-left: 10px;
+	color: #383838;
+}
+input {
+	height: 33px;
+	line-height: 44px;
+}
+textarea {
+	line-height: 25px;
+	resize: none;
+}
