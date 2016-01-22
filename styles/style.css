@@ -17,6 +17,10 @@ body {
 	border-radius: 50%;
 	background-image: url(../images/01.jpg);
 }
+.tube:hover {
+	box-shadow: inset 0px 0px 0px 60px rgba(117,209,255,0.5);
+    transition: box-shadow 0.2s ease-in-out;
+}
 .element {
 	font-family: calibri;
 	font-size: 20px;
@@ -27,10 +31,6 @@ body {
 	width: 205px;
 	display: inline-block;
 	margin-left: 40px;
-}
-.tube:hover {
-	box-shadow: inset 0px 0px 0px 60px rgba(117,209,255,0.5);
-    transition: box-shadow 0.2s ease;
 }
 #left_block {
 	width: 718px;
@@ -214,7 +214,7 @@ td {
 	position: relative;
 	top: 25px;
 }
-#data input, textarea {
+.form_unput {
 	border-radius: 8px;
 	border: 1px #CECECE solid;
 	box-shadow: 0px -2px 1px 2px #F5F5F5;
@@ -224,11 +224,27 @@ td {
 	padding-left: 10px;
 	color: #383838;
 }
-input {
+input[name="nickname"], input[name="phone"], input[name="e-mail"] {
 	height: 33px;
 	line-height: 44px;
 }
 textarea {
 	line-height: 25px;
 	resize: none;
+}
+#form_submit {
+	display: inline-block;
+	vertical-align: top;
+	width: 260px;
+	height: 37px;
+	background-image: linear-gradient(to top, #2685CF, #03BDFE);
+	border-radius: 10px;
+	font-family: calibri;
+	font-size: 16px;
+	line-height: 14pt;
+	color: #000;
+	padding-left: 0px;
+	padding-top: 0px;
+	margin-left: 0px;
+	box-shadow: 0px 23px 1px -18px black;
 }
