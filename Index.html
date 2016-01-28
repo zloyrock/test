@@ -3,36 +3,55 @@
 <head>
 	<title>Example</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script>
+	var result;
+	function onSuccess(data) {
+		if (data) {
+			$('#modal-content').replaceWith('<div class="modal-content" id="success"><button class="btn btn-default" id="btn-default" type="button" data-dismiss="modal"><img id="close" src="images/close.jpg"></button><div align="center"><img id="imgsuccess" src="images/success.jpg"><h3>ВАША ЗАЯВКА ОТПРАВЛЕНА</h3><h6>СОВСЕМ СКОРО С ВАМИ СВЯЖЕТСЯ НАШ МЕНЕДЖЕР</h6></div></div>');
+		}
+		else alert ('не получилось')
+	};
+	function go() {
+		$.post("programm.php",{param1: $("#name").val(), param2: $("#phone").val(), param3: $("#e-mail").val(), param4: $("#text").val()}, onSuccess)
+	};
+</script>
 </head>
 <body>
-	<div id="modal">
-    	<div id="section">
-    		<a href="#" id="close"><img src="images/close.jpg"></a>
-    		<center>
-    			<span id="send_msg">ОТПРАВИТЬ СООБЩЕНИЕ</span>
-    			<form method="get" action="program.php">
-    				<table id="data" cellpadding="8">
+
+<!-- <div class="modal-content" id="success"><button class="btn btn-default" id="btn-default" type="button" data-dismiss="modal"><img id="close" src="images/close.jpg"></button><div align="center"><img id="imgsuccess" src="images/success.jpg"><h3>ВАША ЗАЯВКА ОТПРАВЛЕНА</h3><h6>СОВСЕМ СКОРО С ВАМИ СВЯЖЕТСЯ НАШ МЕНЕДЖЕР</h6></div></div> -->
+
+	<div id="myModal" class="modal fade">
+		<div class="modal-dialog" id="modal-dialog">
+			<div class="modal-content" id="modal-content">
+    			<button class="btn btn-default" id="btn-default" type="button" data-dismiss="modal"><img id="close" src="images/close.jpg"></button>
+    			<center>
+    				<span id="send_msg">ОТПРАВИТЬ СООБЩЕНИЕ</span>
+    				<table id="data">
     					<tr>
-    						<td><input class="form_unput" type="text" name="nickname" size="22" placeholder="Ваше имя"></td>
+    						<td><input class="form_unput" type="text" id="name" size="22" placeholder="Ваше имя"></td>
     					</tr>
     					<tr>
-    						<td><input class="form_unput" type="text" name="phone" size="22" placeholder="Ваш контактный телефон"></td>
+    						<td><input class="form_unput" type="text" id="phone" size="22" placeholder="Ваш контактный телефон"></td>
     					</tr>
     					<tr>
-    						<td><input class="form_unput" type="text" name="e-mail" size="22" placeholder="Электронная почта"></td>
+    						<td><input class="form_unput" type="text" id="e-mail" size="22" placeholder="Электронная почта"></td>
     					</tr>
     					<tr>
-    						<td><textarea class="form_unput" name="text" cols="21" rows="3" placeholder="Сообщение"></textarea></td>
+    						<td><textarea class="form_unput" id="text" cols="20" rows="3" placeholder="Сообщение"></textarea></td>
     					</tr>
     					<tr>
-    						<td><input id="form_submit" type="submit" value="ОТПРАВИТЬ"></td>
+    						<td align="center"><button id="form_submit" onclick="go()">ОТПРАВИТЬ</button></td>
     					</tr>
     				</table>
-    			</form>
-    		</center>
-    	</div>
+    			</center>
+			</div>
+		</div>
 	</div>
+
 	<div id="head_block">
 		<div id="block1">
 			<div class="tube"></div>
@@ -57,7 +76,7 @@
 			<span id="title2">Заголовок 2</span><br>
 			<span id="title3">ЗАГОЛОВОК 3</span><br>
 		</div>
-		<a id="review" href="#modal">ОСТАВИТЬ ЗАЯВКУ</a>
+		<button id="review" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">ОСТАВИТЬ ЗАЯВКУ</button>
 		<table>
 			<tr>
 				<td colspan="4">
