@@ -10,10 +10,10 @@
 	<script>
 	var result;
 	function onSuccess(data) {
-		if (data) {
+		if (data == 1) {
 			$('#modal-content').replaceWith('<div class="modal-content" id="success"><button class="btn btn-default" id="btn-default" type="button" data-dismiss="modal"><img id="close" src="images/close.jpg"></button><div align="center"><img id="imgsuccess" src="images/success.jpg"><h3>ВАША ЗАЯВКА ОТПРАВЛЕНА</h3><h6>СОВСЕМ СКОРО С ВАМИ СВЯЖЕТСЯ НАШ МЕНЕДЖЕР</h6></div></div>');
 		}
-		else alert ('не получилось')
+		else alert (data)
 	};
 	function go() {
 		$.post("programm.php",{param1: $("#name").val(), param2: $("#phone").val(), param3: $("#e-mail").val(), param4: $("#text").val()}, onSuccess)
