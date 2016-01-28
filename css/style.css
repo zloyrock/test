@@ -117,7 +117,7 @@ table {
 	width: 718px;
 	border-collapse: collapse;
 }
-tr {
+#tbl tr {
 	height: 40px;
 }
 .column_1 {
@@ -130,7 +130,7 @@ tr {
 .column_3 {
 	width: 202px;
 }
-td {
+#tbl td {
 	font-family: calibri;
 	font-size: 17px;
 }
@@ -168,6 +168,7 @@ td {
 	border: 0px;
 	height: 440px;
 	width: 380px;
+
 }
 #btn-default {
 	border-radius: 50%;
@@ -175,9 +176,12 @@ td {
 	border: 4px #00455E solid;
 	width: 34px;
 	height: 34px;
-	position: relative;
+	position: absolute;
 	left: 363px;
-	bottom: 13px;
+	top: -18px;
+}
+#modalcenter {
+	padding-top: 10px;
 }
 #close {
 	position: relative;
@@ -194,7 +198,10 @@ td {
 #data {
 	width: 260px;
 	position: relative;
-	top: 25px;
+	top: 10px;
+}
+#data tr {
+	height: 40px;
 }
 .form_unput {
 	border-radius: 8px;
@@ -262,8 +269,27 @@ textarea {
 }
 #success h6 {
 	font-family: calibri;
-	line-height: 5px;
 	color: #53B4EE;
 	position: relative;
 	top: 110px;
+}
+label.error {
+	color:red;
+	font-size: 12px;
+	font-family: calibri;
+	font-weight: 200;
+	position: absolute;
+	left: 10px;
+}
+#name-error {
+	top:-9px;
+}
+#phone-error {
+	top:40px;
+}
+#e-mail-error {
+	top:87px;
+}
+#text-error {
+	top: 136px;
 }

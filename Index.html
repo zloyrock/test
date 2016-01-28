@@ -8,6 +8,20 @@
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/jquery.maskedinput.js"></script>
+	<script src="js/jquery.validate.js"></script>
+	<script>
+	$(document).ready(function() {
+		$("#formm").validate({
+			messages: {
+				name: {required: 'Представьтесь'},
+				phone: {required: 'Укажите контактный телефон'},
+				email: {required: 'Укажите адрес электронной почты'},
+				text: {required: 'Введите текст сообщения'}
+
+			}
+		});
+	});
+	</script>	
 	<script>
 	jQuery(function($){
    $("#phone").mask("+7 (999) 999-99-99?");
@@ -19,7 +33,6 @@
 		if (data == 1) {
 			$('#modal-content').replaceWith('<div class="modal-content" id="success"><button class="btn btn-default" id="btn-default" type="button" data-dismiss="modal"><img id="close" src="images/close.jpg"></button><div align="center"><img id="imgsuccess" src="images/success.jpg"><h3>ВАША ЗАЯВКА ОТПРАВЛЕНА</h3><h6>СОВСЕМ СКОРО С ВАМИ СВЯЖЕТСЯ НАШ МЕНЕДЖЕР</h6></div></div>');
 		}
-		else alert (data)
 	};
 	function go() {
 		$.post("programm.php",{param1: $("#name").val(), param2: $("#phone").val(), param3: $("#e-mail").val(), param4: $("#text").val()}, onSuccess)
@@ -31,25 +44,27 @@
 		<div class="modal-dialog" id="modal-dialog">
 			<div class="modal-content" id="modal-content">
     			<button class="btn btn-default" id="btn-default" type="button" data-dismiss="modal"><img id="close" src="images/close.jpg"></button>
-    			<center>
+    			<center id="modalcenter">
     				<span id="send_msg">ОТПРАВИТЬ СООБЩЕНИЕ</span>
-    				<table id="data">
+    				<form id="formm" onsubmit="go()"  action="javascript:void(null);">
+    				<table height="310px" id="data">
     					<tr>
-    						<td><input class="form_unput" type="text" id="name" size="22" placeholder="Ваше имя"></td>
+    						<td><input class="form_unput" type="text" name="name" id="name" data-rule-required="true" size="22" placeholder="Ваше имя" ></td>
     					</tr>
     					<tr>
-    						<td><input class="form_unput" type="text" id="phone" size="22" placeholder="Ваш контактный телефон"></td>
+    						<td><input class="form_unput" type="text" name="phone" data-rule-required="true" id="phone" size="22" placeholder="Ваш контактный телефон" ></td>
     					</tr>
     					<tr>
-    						<td><input class="form_unput" type="text" id="e-mail" size="22" placeholder="Электронная почта"></td>
+    						<td><input class="form_unput" type="text" name="email" data-rule-required="true" id="e-mail" size="22" placeholder="Электронная почта" ></td>
     					</tr>
     					<tr>
-    						<td><textarea class="form_unput" id="text" cols="20" rows="3" placeholder="Сообщение"></textarea></td>
+    						<td><textarea class="form_unput" id="text" name="text" data-rule-required="true" cols="20" rows="3" placeholder="Сообщение" ></textarea></td>
     					</tr>
     					<tr>
-    						<td align="center"><button id="form_submit" onclick="go()">ОТПРАВИТЬ</button></td>
+    						<td align="center"><button type="submit" id="form_submit"value="">ОТПРАВИТЬ</button></td>
     					</tr>
     				</table>
+					</form>
     			</center>
 			</div>
 		</div>
@@ -80,7 +95,7 @@
 			<span id="title3">ЗАГОЛОВОК 3</span><br>
 		</div>
 		<button id="review" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">ОСТАВИТЬ ЗАЯВКУ</button>
-		<table>
+		<table id="tbl">
 			<tr>
 				<td colspan="4">
 					<table id="table_head">
@@ -149,6 +164,5 @@
 			<li><span class="ol_text">Законодательство вызывает правомерный страховой полис</span></li>
 		</ol>
 	</div>
-	
 </body>
 </html>
