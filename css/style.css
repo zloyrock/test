@@ -215,13 +215,12 @@ table {
 }
 input[name="name"], input[name="phone"], input[name="e-mail"] {
 	height: 33px;
-	line-height: 44px;
+	line-height: 33px;
 }
 textarea {
 	line-height: 25px;
 	resize: none;
-	position: relative;
-	top:4px;
+	outline: red;
 }
 #form_submit {
 	display: inline-block;
