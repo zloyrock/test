@@ -213,14 +213,18 @@ table {
 	padding-left: 10px;
 	color: #383838;
 }
-input[name="name"], input[name="phone"], input[name="e-mail"] {
+input[name="name"], input[name="phone"], input[name="email"] {
 	height: 33px;
 	line-height: 33px;
+	outline: none;
+}
+#name, #phone, #e-mail, #text {
+	width: 270px;
 }
 textarea {
 	line-height: 25px;
 	resize: none;
-	outline: red;
+	outline: none;
 }
 #form_submit {
 	display: inline-block;
