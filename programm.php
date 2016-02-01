@@ -3,7 +3,7 @@
 	$phone = $_POST[param2];
 	$email = $_POST[param3];
 	$text = $_POST[param4];
-	$to = 'ya-mailfor2ch@yandex.ru';
+	$to = 'ip@bitek.ru';
 	$title = 'Сообщение от пользователя!';
 	$msgtext = "Имя: $name\nНомер телефона: $phone\nАдрес электронной почты: $email\nТекст сообщения: $text";
 

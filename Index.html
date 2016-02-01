@@ -9,35 +9,7 @@
 	<script src="js/bootstrap.js"></script>
 	<script src="js/jquery.maskedinput.js"></script>
 	<script src="js/jquery.validate.js"></script>
-	<script>
-	$(document).ready(function() {
-		$("#formm").validate({
-			messages: {
-				name: {required: 'Представьтесь'},
-				phone: {required: 'Укажите контактный телефон'},
-				email: {required: 'Укажите адрес электронной почты'},
-				text: {required: 'Введите текст сообщения'}
-
-			}
-		});
-	});
-	</script>	
-	<script>
-	jQuery(function($){
-   $("#phone").mask("+7 (999) 999-99-99?");
-});
-	</script>
-	<script>
-	var result;
-	function onSuccess(data) {
-		if (data == 1) {
-			$('#modal-content').replaceWith('<div class="modal-content" id="success"><button class="btn btn-default" id="btn-default" type="button" data-dismiss="modal"><img id="close" src="images/close.jpg"></button><div align="center"><img id="imgsuccess" src="images/success.jpg"><h3>ВАША ЗАЯВКА ОТПРАВЛЕНА</h3><h6>СОВСЕМ СКОРО С ВАМИ СВЯЖЕТСЯ НАШ МЕНЕДЖЕР</h6></div></div>');
-		}
-	};
-	function go() {
-		$.post("programm.php",{param1: $("#name").val(), param2: $("#phone").val(), param3: $("#e-mail").val(), param4: $("#text").val()}, onSuccess)
-	};
-</script>
+	<script src="js/myjs.js"></script>
 </head>
 <body>
 	<div id="myModal" class="modal fade">
@@ -46,7 +18,7 @@
     			<button class="btn btn-default" id="btn-default" type="button" data-dismiss="modal"><img id="close" src="images/close.jpg"></button>
     			<center id="modalcenter">
     				<span id="send_msg">ОТПРАВИТЬ СООБЩЕНИЕ</span>
-    				<form id="formm" onsubmit="go()"  action="javascript:void(null);">
+    				<form id="formm" onsubmit="go()" metod="post" action="program.php">
     				<table wigth="100px" height="310px" id="data">
     					<tr>
     						<td><input class="form_unput" type="text" name="name" data-rule-required="true" id="name" placeholder="Ваше имя" ></td>
